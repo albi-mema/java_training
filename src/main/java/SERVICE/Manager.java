@@ -43,7 +43,7 @@ public class Manager{
     public void editUserName(USER user,String name){
         String oldUserName = user.getName();
         user.setName(name);
-        System.out.println("Changed the name of  " + user.getName() + " from " + oldUserName + " to " + name + ".");
+        System.out.println("Changed the name of a user from " + oldUserName + " to " + name + ".");
     }
     public void editUserSurname(USER user,String surname) {
         String oldUserSurname = user.getSurname();

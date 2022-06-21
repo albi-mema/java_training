@@ -23,7 +23,7 @@ public class App {
         data.addSpid(user_3_spid);
         System.out.println("");
 
-        data.editUserName(user_3,"Username3");
+        data.editUserName(user_3,"John");
         System.out.println("");
 
         data.editUserSurname(user_2,"Abedini");
