@@ -7,6 +7,9 @@ public class USER extends Base{
     String surname;
     String username;
 
+    public USER(){
+        super();
+    }
     public USER(long id, Timestamp created_at, Timestamp created_by, String name, String surname, String username) {
         super(id, created_at, created_by);
         this.name = name;

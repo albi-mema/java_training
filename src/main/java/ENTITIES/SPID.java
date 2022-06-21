@@ -4,15 +4,19 @@ import java.sql.Timestamp;
 public class SPID extends Base {
         public long id;
         public USER user;
-        public status status = ENTITIES.status.PENDING;
+        public status status;
         public String description;
 
-    public SPID(long id, Timestamp created_at, Timestamp created_by, long id1, USER user, ENTITIES.status status, String description) {
+        public SPID(){
+            super();
+        }
+
+    public SPID(long id, Timestamp created_at, Timestamp created_by, long spidId, USER user, String description) {
         super(id, created_at, created_by);
-        this.id = id1;
+        this.id = spidId;
         this.user = user;
-        this.status = status;
         this.description = description;
+        this.status = ENTITIES.status.PENDING;
     }
 
     public long getId() {
@@ -27,7 +31,7 @@ public class SPID extends Base {
     public void setUser(USER user) {
         this.user = user;
     }
-    public ENTITIES.status getStatus() {    
+    public ENTITIES.status getStatus() {
         return status;
     }
     public void setStatus(ENTITIES.status status) {
