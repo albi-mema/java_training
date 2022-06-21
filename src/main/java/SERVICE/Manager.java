@@ -16,15 +16,28 @@ public class Manager{
         this.spid_list = new ArrayList<SPID>();
     }
 
-    public ENTITIES.USER createUser(long id, String name, String surname, String username){
-        System.out.println("Created user " + name + ".");
-           return new USER(id,new Timestamp(System.currentTimeMillis()),new Timestamp(System.currentTimeMillis()),name,surname,username);
+    public ENTITIES.USER createUser(long id, String name, String surname, String username) {
+        USER user = null;
+        try {
+            user = new USER(id, new Timestamp(System.currentTimeMillis()), new Timestamp(System.currentTimeMillis()), name, surname, username);
+        } catch (Exception e) {
+            System.out.println("Something went wrong " + e);
+        } finally {
+            System.out.println("Created user " + name + ".");
+        }
+        return user;
     }
 
-    public ENTITIES.SPID createSpid(USER user,String description){
-        System.out.println("Created spid of user " + user.getName() + ".");
-        return new SPID(user.getId(),new Timestamp(System.currentTimeMillis()),new Timestamp(System.currentTimeMillis()),user.getId(),user,description);
-
+    public ENTITIES.SPID createSpid(USER user,String description) {
+        SPID spid = null;
+        try {
+            spid = new SPID(user.getId(), new Timestamp(System.currentTimeMillis()), new Timestamp(System.currentTimeMillis()), user.getId(), user, description);
+        } catch (Exception e) {
+            System.out.println("Something went wrong " + e);
+        } finally {
+            System.out.println("Created spid of user " + user.getName() + ".");
+        }
+        return spid;
     }
 
     public void editUserName(USER user,String name){
