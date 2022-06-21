@@ -27,7 +27,7 @@ public class SPID extends Base {
     public void setUser(USER user) {
         this.user = user;
     }
-    public ENTITIES.status getStatus() {
+    public ENTITIES.status getStatus() {    
         return status;
     }
     public void setStatus(ENTITIES.status status) {
